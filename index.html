@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL DIAMOND MALI - Expertise Informatique, BTP & Commerce Général</title>
+    <!-- CSS personnalisé-->
+    <link rel="stylesheet" href="asset/asset.css">
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts (Poppins & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="icon" href="images/logo.png" type="image/vnd.microsoft.icon" />
+
+    <style>
+        :root {
+            --primary-blue: #0070C0;
+            --primary-red: #C00000;
+            --dark-navy: #0A192F;
+            --accent-cyan: #00D2FF;
+            --bg-light: #F8FAFC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            overflow-x: hidden;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-navy);
+            color: #CBD5E1;
+            font-size: 0.85rem;
+            padding: 8px 0;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .top-bar a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand-title {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--dark-navy);
+            line-height: 1.1;
+        }
+
+        .navbar-brand-sub {
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-navy) !important;
+            margin: 0 8px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(0, 112, 192, 0.85) 100%), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            padding: 120px 0 100px 0;
+        }
+
+        .badge-tech {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 112, 192, 0.4);
+        }
+
+        .btn-custom-primary:hover {
+            background-color: #005696;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-custom-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-outline:hover {
+            background-color: white;
+            color: var(--dark-navy);
+            transform: translateY(-2px);
+        }
+
+        /* Service & Material Cards */
+        .service-card, .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 25px;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Indique que la carte est cliquable */
+        }
+
+        .service-card:hover, .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-blue);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(0, 112, 192, 0.1);
+            color: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .product-img {
+            height: 180px;
+            object-fit: contain;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        /* Modale avec animation Droite -> Gauche */
+        .modal-slide-right .modal-dialog {
+            margin: 0 0 0 auto;
+            height: 100%;
+            max-width: 480px;
+            transform: translateX(100%);
+            transition: transform 0.35s ease-in-out;
+        }
+
+        .modal-slide-right.show .modal-dialog {
+            transform: translateX(0);
+        }
+
+        .modal-slide-right .modal-content {
+            height: 100%;
+            border-radius: 0;
+            border: none;
+            overflow-y: auto;
+        }
+
+        /* Section Cartographie & Itinéraire */
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary-blue);
+        }
+
+        /* Stats */
+        .stats-section {
+            background-color: var(--dark-navy);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-navy) 100%);
+            border-radius: 20px;
+            padding: 50px 30px;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-navy);
+            color: #94A3B8;
+            padding-top: 70px;
+            padding-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer h5 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer ul li a {
+            color: #94A3B8;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre d'informations supérieure -->
+    <div class="top-bar d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span class="me-3"><i class="fa-solid fa-location-dot text-primary me-1"></i> Torokorobougou Rue 428, Porte 477, Bamako, Mali</span>
+                <span><i class="fa-solid fa-envelope text-primary me-1"></i> <a href="mailto:royaldiamondmali223@gmail.com">royaldiamondmali223@gmail.com</a></span>
+            </div>
+            <div>
+                <span class="me-3"><i class="fa-solid fa-phone text-primary me-1"></i> (+223) 66 75 70 56 / 77 80 90 90</span>
+                <span><i class="fa-solid fa-globe text-primary me-1"></i> www.royaldiamond.ml</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- Logo dans le Navbar -->
+                <img src="images/logo.png" alt="Logo Royal Diamond Mali" height="50" class="me-2" onerror="this.style.display='none'">
+                <div>
+                    <div class="navbar-brand-title">ROYAL DIAMOND MALI</div>
+                    <div class="navbar-brand-sub">INGÉNIERIE INFORMATIQUE & BTP</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#a-propos">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services Tech</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#btp-commerce">BTP & Commerce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#materiels">Materiels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#itineraire">Itineraire</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#contact" class="btn btn-custom-primary btn-sm">Demander un Devis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="badge-tech"><i class="fa-solid fa-microchip me-2"></i> Leader en Soluions Digitales & IT</span>
+                    <h1 class="hero-title">L'Innovation Informatique au Service de Votre Croissance.</h1>
+                    <p class="lead mb-4 opacity-90">ROYAL DIAMOND MALI façonne l'avenir numérique des entreprises à Bamako et à travers tout le Mali. Ingénierie logicielle, réseaux, sécurité & infrastructure BTP de pointe.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#services" class="btn btn-custom-primary btn-lg"><i class="fa-solid fa-rocket me-2"></i> Nos Solutions IT</a>
+                        <a href="#contact" class="btn btn-custom-outline btn-lg"><i class="fa-solid fa-headset me-2"></i> Nous Contacter</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-5 mt-lg-0 text-center" data-aos="fade-left">
+                    <div class="p-4 bg-white rounded-4 shadow-lg text-dark text-start border-top border-4 border-primary">
+                        <h4 class="fw-bold mb-3 text-navy"><i class="fa-solid fa-shield-halved text-primary me-2"></i> Demande Express</h4>
+                        <p class="text-muted small">Besoin d'un audit informatique ou d'un devis BTP ? Réponse garantie sous 24h.</p>
+                        <form id="heroForm">
+                            <div class="mb-3">
+                                <input type="text" id="heroName" class="form-control" placeholder="Votre nom complet" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="heroEmail" class="form-control" placeholder="Adresse e-mail" required>
+                            </div>
+                            <div class="mb-3">
+                                <select id="heroDomain" class="form-select" required>
+                                    <option value="" selected disabled>Domaine concerné</option>
+                                    <option value="Infrastructures & Logiciels IT">Infrastructures & Logiciels IT</option>
+                                    <option value="Réseaux & Télécoms">Réseaux & Télécoms</option>
+                                    <option value="BTP & Construction">BTP & Construction</option>
+                                    <option value="Commerce Général & Équipements">Commerce Général & Équipements</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-custom-primary w-100">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Chiffres Clés -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3" data-aos="zoom-in">
+                    <div class="stat-number" data-target="99.8" data-decimals="1" data-suffix="%">0%</div>
+                    <div class="text-light-50 small">Disponibilité Systèmes</div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number" data-target="150" data-prefix="+" data-decimals="0">+0</div>
+                    <div class="text-light-50 small">Projets Réalisés</div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">24/7</div>
+                    <div class="text-light-50 small">Support & Assistance IT</div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number" data-target="100" data-decimals="0" data-suffix="%">0%</div>
+                    <div class="text-light-50 small">Satisfaction Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À Propos -->
+    <section id="a-propos" class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="pe-lg-4">
+                        <span class="text-primary fw-bold text-uppercase small">À Propos de Nous</span>
+                        <h2 class="fw-bold my-3">Un Partenaire Polyvalent aux Normes Internationales</h2>
+                        <p class="text-muted">Implantée à Bamako (Torokorobougou), **ROYAL DIAMOND MALI** est une structure pluridisciplinaire d'excellence. Si notre expertise historique englobe le BTP et le Commerce Général, notre cœur de métier et notre savoir-faire majeur résident dans **les technologies de l'information et de la communication (TIC)**.</p>
+                        <p class="text-muted">Nous accompagnons les institutions publiques, les entreprises privées et les particuliers dans leur transformation numérique globale tout en assurant des prestations de haut niveau en BTP.</p>
+                        <div class="row mt-4">
+                            <div class="col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-circle-check text-primary fs-4 me-3"></i>
+                                    <span class="fw-semibold">Matériel informatique certifié</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-circle-check text-primary fs-4 me-3"></i>
+                                    <span class="fw-semibold">Expertise BTP & Génie Civil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="images/partenariats.jfif" alt="Tech Office" class="img-fluid rounded-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services Informatiques -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <span class="text-primary fw-bold text-uppercase small">Pôle Informatique & Digital</span>
+                <h2 class="fw-bold">Nos Solutions Informatiques de Pointe</h2>
+                <p class="text-muted">Des services technologiques sur-mesure pour moderniser et sécuriser votre entreprise.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Réseaux & Infrastructures</h4>
+                        <p class="text-muted small">Conception, câblage structuré, configuration de serveurs et administration réseau haute performance.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Développement de Logiciels & Web</h4>
+                        <p class="text-muted small">Création d'applications métier sur mesure, sites web professionnels et plateformes de gestion ERP/CRM.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Sécurité & Vidéosurveillance</h4>
+                        <p class="text-muted small">Installation de caméras IP de pointe, contrôle d'accès biométrique et audits de cybersécurité.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-laptop-medical"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Maintenance & Support IT</h4>
+                        <p class="text-muted small">Assistance technique réactive, maintenance préventive/curative de votre parc informatique.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-cart-flatbed"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Vente d'Équipements Informatiques</h4>
+                        <p class="text-muted small">Fourniture d'ordinateurs, serveurs, imprimantes et consommables de grandes marques internationales.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h4 class="fw-bold h5">Cloud & Sauvegarde</h4>
+                        <p class="text-muted small">Solutions de stockage cloud sécurisé et plans de reprise d'activité en cas de sinistre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section BTP & Commerce Général -->
+    <section id="btp-commerce" class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <span class="text-primary fw-bold text-uppercase small">Diversification & Rigueur</span>
+                <h2 class="fw-bold">Commerce Général & BTP</h2>
+                <p class="text-muted">Nos pôles d'excellence complémentaires pour répondre à tous vos besoins d'aménagement et de fourniture.</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="p-4 bg-white rounded-4 border shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="p-3 bg-danger bg-opacity-10 text-danger rounded-3 me-3 fs-3">
+                                <i class="fa-solid fa-helmet-safety"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-0">Bâtiments & Travaux Publics (BTP)</h3>
+                        </div>
+                        <p class="text-muted">Nous réalisons des travaux de construction, de rénovation et d'aménagement d'infrastructures avec un souci permanent de qualité et de respect des délais.</p>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-2"><i class="fa-solid fa-check text-danger me-2"></i> Construction de bâtiments administratifs et résidentiels</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-danger me-2"></i> Travaux de réhabilitation et d'aménagement</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-danger me-2"></i> Études et suivi de chantier</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="p-4 bg-white rounded-4 border shadow-sm">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="p-3 bg-primary bg-opacity-10 text-primary rounded-3 me-3 fs-3">
+                                <i class="fa-solid fa-boxes-packing"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-0">Commerce Général & Négoce</h3>
+                        </div>
+                        <p class="text-muted">Un réseau d'approvisionnement solide pour la fourniture de matériel divers et d'équipements spécialisés pour les entreprises et institutions.</p>
+                        <ul class="list-unstyled text-muted">
+                            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Fournitures de bureau & consommables</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Équipements de protection individuelle (EPI)</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-primary me-2"></i> Import-Export de matériel divers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION : MATÉRIAUX ET ÉQUIPEMENTS -->
+    <section id="materiels" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <span class="text-primary fw-bold text-uppercase small">Catalogue Équipements</span>
+                <h2 class="fw-bold">Nos Matériaux Informatiques & High-Tech</h2>
+                <p class="text-muted">Nous fournissons du matériel certifié de marques mondiales (HP, Dell, Cisco, Hikvision, Lenovo, APC).</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card text-center">
+                        <img src="images/laptops_all.jpg" alt="Ordinateurs Portables Pro" class="product-img">
+                        <span class="badge bg-primary mb-2">Bureautique & Pro</span>
+                        <h5 class="fw-bold fs-6">Ordinateurs & Laptops Pro</h5>
+                        <p class="text-muted small">HP EliteBook, Dell Latitude, Lenovo ThinkPad avec processeurs Intel i5/i7/i9 de dernière génération.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card text-center">
+                        <img src="images/server.jpg" alt="Serveurs & Baies" class="product-img">
+                        <span class="badge bg-primary mb-2">Infrastructures</span>
+                        <h5 class="fw-bold fs-6">Serveurs & Baies de Brassage</h5>
+                        <p class="text-muted small">Serveurs rack HP ProLiant / Dell PowerEdge, coffrets réseaux, racks informatiques et PDU.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card text-center">
+                        <img src="images/wifi_switch.jpg" alt="Équipements Réseau" class="product-img">
+                        <span class="badge bg-primary mb-2">Réseaux</span>
+                        <h5 class="fw-bold fs-6">Switches, Routeurs & Wi-Fi</h5>
+                        <p class="text-muted small">Switches administrables PoE, Routeurs d'entreprise, Bornes Wi-Fi Ubiquiti/TP-Link et câble Cat6/Cat7.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card text-center">
+                        <img src="images/camera_biometrie.jpg" alt="Sécurité IP" class="product-img">
+                        <span class="badge bg-primary mb-2">Sécurité</span>
+                        <h5 class="fw-bold fs-6">Caméras IP & Biométrie</h5>
+                        <p class="text-muted small">Caméras de surveillance Hikvision/Dahua 4K, enregistreurs NVR, pointeuses biométriques ZKTEco.</p>
+                    </div>
+                </div>
+
+                <!-- Écrans et Supports -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card text-center">
+                        <img src="images/ecran_support.jpg" alt="Écrans et Supports" class="product-img">
+                        <span class="badge bg-primary mb-2">Affichage</span>
+                        <h5 class="fw-bold fs-6">Écrans & Supports PC</h5>
+                        <p class="text-muted small">Moniteurs HD/4K toutes tailles, supports ergonomiques simples ou doubles et bras articulés ajustables.</p>
+                    </div>
+                </div>
+
+                <!-- Accessoires & Périphériques -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-card text-center">
+                        <img src="images/souris_casque.jpg" alt="Périphériques Informatiques" class="product-img">
+                        <span class="badge bg-primary mb-2">Accessoires</span>
+                        <h5 class="fw-bold fs-6">Périphériques & Audio</h5>
+                        <p class="text-muted small">Souris ergonomiques, claviers, casques professionnels anti-bruit et microphones pour visioconférence.</p>
+                    </div>
+                </div>
+
+                <!-- Ordinateurs & PC Portables -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card text-center">
+                        <img src="images/laptops_desktop.jpg" alt="Ordinateurs Fixes et Portables" class="product-img">
+                        <span class="badge bg-primary mb-2">Informatique</span>
+                        <h5 class="fw-bold fs-6">Laptops & Ordinateurs</h5>
+                        <p class="text-muted small">PC portables et unités centrales haute performance pour la bureautique et les travaux exigeants.</p>
+                    </div>
+                </div>
+
+                <!-- Impression & Numérisation -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card text-center">
+                        <img src="images/imprimante.jpg" alt="Imprimantes et Scanners" class="product-img">
+                        <span class="badge bg-primary mb-2">Impression</span>
+                        <h5 class="fw-bold fs-6">Imprimantes & Scanners</h5>
+                        <p class="text-muted small">Imprimantes multifonctions laser/jet d'encre, scanners haute vitesse et consommables d'origine.</p>
+                    </div>
+                </div>
+
+                <!-- Onduleurs & Protection Électrique -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card text-center">
+                        <img src="images/onduleur.jpg" alt="Onduleurs et Protection Électrique" class="product-img">
+                        <span class="badge bg-primary mb-2">Énergie</span>
+                        <h5 class="fw-bold fs-6">Onduleurs & Protection</h5>
+                        <p class="text-muted small">Onduleurs APC/Eaton, régulateurs de tension et multiprises sécurisées pour protéger vos équipements.</p>
+                    </div>
+                </div>
+
+                <!-- Réseaux & Connectivité -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="350">
+                    <div class="product-card text-center">
+                        <img src="images/wifi_reseaux_entreprise.jpg" alt="Réseaux d'Entreprise" class="product-img">
+                        <span class="badge bg-primary mb-2">Réseau</span>
+                        <h5 class="fw-bold fs-6">Réseaux & Wi-Fi Pro</h5>
+                        <p class="text-muted small">Solutions réseau complètes : routeurs, switches PoE, bornes Wi-Fi d'entreprise et câblage RJ45.</p>
+                    </div>
+                </div>
+
+                <!-- Téléphonie & Connectique -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card text-center">
+                        <img src="images/phone_tele_chargeur.jpg" alt="Téléphonie et Connectique" class="product-img">
+                        <span class="badge bg-primary mb-2">Connectique</span>
+                        <h5 class="fw-bold fs-6">Téléphonie & Chargeurs</h5>
+                        <p class="text-muted small">Téléphones d'entreprise IP, câbles de recharge rapide, adaptateurs universels et stations d'accueil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-custom-primary"><i class="fa-solid fa-file-invoice me-2"></i> Solliciter un devis de matériel</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION : LOCALISATION ET ITINÉRAIRE -->
+    <section id="itineraire" class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <span class="text-primary fw-bold text-uppercase small">Géolocalisation</span>
+                    <h2 class="fw-bold my-3">Rendez-nous visite dans nos locaux</h2>
+                    <p class="text-muted">Nos bureaux sont idéalement situés à Bamako pour vous accueillir et échanger sur l'ensemble de vos projets informatiques et BTP.</p>
+                    
+                    <div class="card border-0 bg-light p-3 mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-map-pin text-danger fs-3 me-3"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Adresse exacte :</h6>
+                                <p class="text-muted small mb-0">Torokorobougou, Rue 428, Porte 477<br>Bamako, République du Mali</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 bg-light p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-clock text-primary fs-3 me-3"></i>
+                            <div>
+                                <h6 class="fw-bold mb-0">Heures d'ouverture :</h6>
+                                <p class="text-muted small mb-0">Lundi - Vendredi : 08h00 - 18h00<br>Samedi : 09h00 - 13h00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Torokorobougou+Bamako+Mali" target="_blank" class="btn btn-custom-primary w-100">
+                        <i class="fa-solid fa-diamond-turn-right me-2"></i> Lancer l'itinéraire sur Google Maps
+                    </a>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31118.83549241088!2d-8.018029050000001!3d12.60127595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xcdcd03a46fb38d3%3A0xc3f6a29e061ad381!2sTorokorobougou%2C%20Bamako!5e0!3m2!1sfr!2sml!4v1710000000000!5m2!1sfr!2sml" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Contact / CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-banner text-center" data-aos="zoom-in">
+                <h2 class="fw-bold mb-3">Besoin d'un équipement ou d'une prestation spécifique ?</h2>
+                <p class="mb-4 opacity-90">ROYAL DIAMOND MALI réagit avec rapidité et précision pour vos approvisionnements.</p>
+                <a href="#contact" class="btn btn-light btn-lg fw-bold text-primary"><i class="fa-solid fa-envelope me-2"></i> Contactez nos experts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <span class="text-primary fw-bold text-uppercase small">Contactez-nous</span>
+                    <h2 class="fw-bold my-3">Informations de Contact</h2>
+
+                    <div class="mb-3"><i class="fa-solid fa-phone text-primary me-2"></i> (+223) 66 75 70 56 / 77 80 90 90</div>
+                    <div class="mb-3"><i class="fa-solid fa-envelope text-primary me-2"></i> royaldiamondmali223@gmail.com</div>
+                    <div class="mb-3"><i class="fa-solid fa-globe text-primary me-2"></i> www.royaldiamond.ml</div>
+                    <div><i class="fa-solid fa-id-card text-primary me-2"></i> NIF : 085152360L</div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                        <h3 class="fw-bold mb-4">Envoyer un Message</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" id="contactName" class="form-control" placeholder="Nom complet" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" id="contactPhone" class="form-control" placeholder="Téléphone" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" id="contactEmail" class="form-control" placeholder="E-mail" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea id="contactMessage" class="form-control" rows="4" placeholder="Votre message ou matériel recherché..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-custom-primary w-100">Envoyer le message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <!-- Logo dans le Footer -->
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="images/logo.jpeg" alt="Logo Royal Diamond Mali" height="50" class="me-2" onerror="this.style.display='none'">
+                        <h5 class="text-white mb-0">ROYAL DIAMOND MALI</h5>
+                    </div>
+                    <p class="small">Société spécialisée dans l'ingénierie informatique, le bâtiment & travaux publics (BTP) ainsi que le commerce général à Bamako, Mali.</p>
+                    <p class="small text-light-50">NIF : 085152360L</p>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À Propos</a></li>
+                        <li><a href="#services">Services IT</a></li>
+                        <li><a href="#btp-commerce">BTP & Négoce</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Domaines IT</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#services">Infrastructures Réseaux</a></li>
+                        <li><a href="#services">Vidéosurveillance & Sécurité</a></li>
+                        <li><a href="#services">Développement Software</a></li>
+                        <li><a href="#services">Maintenance Informatique</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Contact Rapide</h5>
+                    <p class="small mb-1"><i class="fa-solid fa-phone me-2 text-primary"></i> (+223) 66 75 70 56</p>
+                    <p class="small mb-1"><i class="fa-solid fa-phone me-2 text-primary"></i> (+223) 77 80 90 90</p>
+                    <p class="small"><i class="fa-solid fa-envelope me-2 text-primary"></i> royaldiamondmali223@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p class="mb-0 small">&copy; <span id="year"></span> ROYAL DIAMOND MALI. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALE SLIDE-IN (DROITE À GAUCHE) POUR MATÉRIELS -->
+    <div class="modal fade modal-slide-right" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content p-4">
+                <div class="modal-header border-0 pb-0">
+                    <span id="modalBadge" class="badge bg-primary me-2"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body text-center pt-3">
+                    <img id="modalImg" src="" alt="Matériel" class="img-fluid mb-4 rounded" style="max-height: 250px; object-fit: contain;">
+                    <h3 id="modalTitle" class="fw-bold mb-3"></h3>
+                    <p id="modalDescription" class="text-muted text-start mb-4 fs-6" style="line-height: 1.6;"></p>
+                    
+                    <div class="border-top pt-4 text-start">
+                        <h6 class="fw-bold mb-3"><i class="fa-solid fa-shield-halved text-primary me-2"></i> Inclus avec cet équipement :</h6>
+                        <ul class="list-unstyled text-muted small mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Matériel garanti constructeur</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Support technique & installation sur site</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Livraison rapide à Bamako et régions</li>
+                        </ul>
+                        <a href="#contact" id="btnDevisModal" class="btn btn-custom-primary w-100">
+                            <i class="fa-solid fa-paper-plane me-2"></i> Demander un devis personnalisé
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialisation des animations AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mise à jour automatique de l'année dans le footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Animation de la barre de navigation au défilement
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // --- GESTION DU CLIC SUR LES CARTES DE MATÉRIELS (MODALE DROITE À GAUCHE) ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const productCards = document.querySelectorAll('#materiels .product-card');
+            const productModalElement = document.getElementById('productModal');
+            const productModal = new bootstrap.Modal(productModalElement);
+
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const imgUrl = this.querySelector('.product-img').getAttribute('src');
+                    const imgAlt = this.querySelector('.product-img').getAttribute('alt');
+                    const badgeText = this.querySelector('.badge').textContent;
+                    const titleText = this.querySelector('h5').textContent;
+                    const descText = this.querySelector('p').textContent;
+
+                    document.getElementById('modalImg').setAttribute('src', imgUrl);
+                    document.getElementById('modalImg').setAttribute('alt', imgAlt);
+                    document.getElementById('modalBadge').textContent = badgeText;
+                    document.getElementById('modalTitle').textContent = titleText;
+                    document.getElementById('modalDescription').textContent = descText;
+
+                    productModal.show();
+                });
+            });
+        });
+
+        // --- 1. DÉCOMPTE ANIMÉ DES STATISTIQUES AU MOMENT DE L'AFFICHAGE ---
+        function animateValue(obj, start, end, duration, decimals = 0, prefix = "", suffix = "") {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentValue = progress * (end - start) + start;
+                obj.textContent = prefix + currentValue.toFixed(decimals) + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const statsSection = document.querySelector('.stats-section');
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+                        const target = parseFloat(el.getAttribute('data-target'));
+                        const decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+                        const prefix = el.getAttribute('data-prefix') || "";
+                        const suffix = el.getAttribute('data-suffix') || "";
+                        animateValue(el, 0, target, 2000, decimals, prefix, suffix);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // --- 2. REDIRECTION VERS GMAIL AVEC TOUS LES CHAMPS RENSEIGNÉS ---
+        const DEST_EMAIL = 'royaldiamondmali223@gmail.com';
+
+        // Formulaire Hero (Demande Express)
+        const heroForm = document.getElementById('heroForm');
+        if (heroForm) {
+            heroForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('heroName').value;
+                const email = document.getElementById('heroEmail').value;
+                const domain = document.getElementById('heroDomain').value;
+
+                const subject = encodeURIComponent(`Demande Express - ${domain}`);
+                const body = encodeURIComponent(
+                    `Bonjour ROYAL DIAMOND MALI,\n\n` +
+                    `Voici une nouvelle demande d'information/devis :\n\n` +
+                    `- Nom complet : ${name}\n` +
+                    `- Adresse email : ${email}\n` +
+                    `- Domaine concerné : ${domain}\n\n` +
+                    `Cordialement,\n${name}`
+                );
+
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${DEST_EMAIL}&su=${subject}&body=${body}`;
+                window.open(gmailUrl, '_blank');
+            });
+        }
+
+        // Formulaire Contact
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value;
+                const phone = document.getElementById('contactPhone').value;
+                const email = document.getElementById('contactEmail').value;
+                const message = document.getElementById('contactMessage').value;
+
+                const subject = encodeURIComponent(`Nouveau Message de ${name}`);
+                const body = encodeURIComponent(
+                    `Bonjour ROYAL DIAMOND MALI,\n\n` +
+                    `Vous avez reçu un nouveau message depuis le site web :\n\n` +
+                    `- Nom complet : ${name}\n` +
+                    `- Téléphone : ${phone}\n` +
+                    `- E-mail : ${email}\n\n` +
+                    `Message / Matériel recherché :\n${message}\n\n` +
+                    `Cordialement,\n${name}`
+                );
+
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${DEST_EMAIL}&su=${subject}&body=${body}`;
+                window.open(gmailUrl, '_blank');
+            });
+        }
+
+        document.getElementById('btnDevisModal').addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // 1. Récupération de l'instance de la modale et fermeture
+            const modalElement = document.getElementById('productModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+
+            // 2. Défilement fluide vers la section #contact après la fermeture
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 300); // 300ms correspond au temps de l'animation de fermeture
+        });
+
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                // Retire la classe 'active' de tous les liens de la navbar
+                document.querySelectorAll('.navbar-nav .nav-link').forEach(nav => nav.classList.remove('active'));
+                
+                // Ajoute la classe 'active' sur le lien qui vient d'être cliqué
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
