@@ -145,12 +145,16 @@
             border-radius: 5px;
             margin-bottom: 15px;
         }
+        /* ===== Correction de la modale Slide Right pour Mobile ===== */
+        .modal.modal-slide-right {
+            overflow-x: hidden !important; /* Empêche le débordement horizontal de la page */
+        }
 
-        /* Modale avec animation Droite -> Gauche */
         .modal-slide-right .modal-dialog {
             margin: 0 0 0 auto;
             height: 100%;
-            max-width: 480px;
+            max-width: 450px;
+            width: 100%; /* S'adapte à 100% de l'écran sur mobile */
             transform: translateX(100%);
             transition: transform 0.35s ease-in-out;
         }
